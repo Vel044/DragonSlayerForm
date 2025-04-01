@@ -1,9 +1,11 @@
 name: "俞乐楠"
 student-id: 1120221303
-department: "特立书院"
+department: "睿信书院"
 skills:
-- "123 "
+- "乒乓球"
+- "yumaopqiu"
+- "123"
 courage: 10
-available-time: "12:00-16:00"
+available-time: "16:00-22:00"
 training: true
-notes: "123456"
+notes: "asd"

@@ -1,11 +1,21 @@
-//tui_lib.hpp
+// tui_lib.hpp
+// 头文件
 
 #ifndef TUI_LIB_HPP
 #define TUI_LIB_HPP
 
+#include <iostream>
 #include <string>
 #include <vector>
 #include <functional>
+#include <regex>
+
+// 四种颜色宏
+#define COLOR_RESET "\033[0m"
+#define COLOR_ARROW "\033[91m"    // 红色：箭头
+#define COLOR_PROMPT "\033[94m"   // 蓝色：提示词
+#define COLOR_INPUT "\033[96m"    // 青色：输入时显示
+#define COLOR_FILLED "\033[93m"   // 黄色：已填写的内容
 
 namespace TUI {
 
@@ -41,6 +51,13 @@ namespace TUI {
 
     // 验证时间范围是否合法且不超过6小时（允许跨日）
     bool validateTimeRange(const std::string &timeRange);
+
+    // 交互式勇气值输入，左右选择数字
+    int interactiveCourageField(const std::string &prompt, int min, int max);
+
+    // 交互式可参与行动的时间输入，格式 HH:MM-HH:MM，左右选择编辑位，上下加减数字
+    std::string interactiveTimeRangeField(const std::string &prompt);
+
 }
 
 #endif // TUI_LIB_HPP
