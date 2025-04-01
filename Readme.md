@@ -1,7 +1,31 @@
-# 表单交互系统
+# TUI库设计+表单交互
+
+## 文件结构
+
+```
+├── source/                # 源代码目录
+│   ├── main.cpp           # 程序入口
+│   ├── tui_lib.hpp        # 头文件，定义所有 TUI 交互函数
+│   ├── tui_lib.cpp        # 交互逻辑的实现
+│   ├── CMakeLists.txt     # CMake 构建配置文件
+│   └── ...                # 其他源文件/文件夹
+│
+├── release/               # 可执行文件目录
+│   ├── TUI.exe            # 生成的 Windows 可执行文件
+│   ├── libstdc++-6.dll    # 运行时依赖库
+│   ├── libgcc_s_seh-1.dll # 运行时依赖库
+│   ├── libwinpthread-1.dll# 运行时依赖库
+│
+├── 演示视频.mp4            # 使用演示视频
+│
+└── README.md              # 项目说明文件
+```
 
 ## 项目简介
+
 本项目是一个基于终端用户界面的表单交互系统，提供多种输入方式，包括文本输入、整数输入、列表选择、技能输入、勇气值选择和时间范围选择等。系统采用 C++ 编写，并使用了 Windows 平台上的 `_getch()` 进行用户输入处理。
+
+项目开源在`https://github.com/Vel044/DragonSlayerForm`
 
 ## 功能特性
 1. **清屏功能**：提供 `clearScreen()` 以清空终端界面。
@@ -29,13 +53,22 @@
 - `tui_lib.cpp`：实现 `tui_lib` 交互逻辑。
 
 ## 运行方式
+
+### 编译
+
 确保你的环境支持 Windows 控制台，并编译项目：
 ```sh
 "C:\Program Files\JetBrains\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" --build D:\Tasks\C\TUI\cmake-build-debug --target TUI -j 18
 ```
 
+### 直接运行可执行文件
+
+在release文件夹内的exe包含dll动态链接库可以双击直接执行
+```sh
+/release/TUI.exe
+```
+
 ## 未来改进
 - 支持 Linux/macOS 兼容性。
-- 增强表单验证逻辑。
 - 增加更多可交互输入组件。
 
